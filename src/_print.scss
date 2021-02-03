@@ -1,0 +1,28 @@
+@media print{
+  html, body, * {
+    background-color: transparent !important;
+  }
+
+  @page {
+    // size: A4 !important;
+  }
+
+  #root > :not(.print-page-wrapper) {
+    display: none !important;
+  }
+
+  .print-page-wrapper * :not(.print-item) {
+    display: none;
+  }
+
+  .print-page-wrapper, .print-page, .print-item{
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .print-image{
+    border: none !important;
+    outline: none !important;
+  }
+}

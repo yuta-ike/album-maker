@@ -1,0 +1,8 @@
+.printImage{
+  // border: 1px solid red;
+  outline: 1px solid transparent;
+  outline-offset: 1px;
+  &:hover{
+    outline-color: rgb(177, 40, 40);
+  }
+}

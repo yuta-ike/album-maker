@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react'
-import { useUserStateValues } from '../context/UserProvider'
+import { useUserStateValues } from '../state/context/UserProvider'
 import ConditionalRoute from './ConditionalRoute'
 
 type Props = Omit<ComponentProps<typeof ConditionalRoute>, "when">

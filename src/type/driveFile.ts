@@ -10,8 +10,16 @@ type DriveFile = {
     height: number
     width: number
   }
-  lastModifiedDateTime: string
+  lastModifiedDateTime: Date
   webUrl: string
+  parentReference: {
+    id: string
+  }
+  thumbnail: Record<"small" | "medium" | "large", {
+    width: number
+    height: number
+    url: string
+  }>
   downloadUrl: string /* @microsoft.graph.downloadUrl */
 }
 export default DriveFile

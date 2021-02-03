@@ -1,0 +1,36 @@
+// Global style
+.link {
+  color: rgb(55, 127, 194);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+body {
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-top: env(safe-area-inset-top);
+  background: #F7FAFC !important;
+}
+
+// Animation
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-100%);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// Import
+@import "./print"
+

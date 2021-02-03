@@ -7,6 +7,9 @@ type Folder = {
   }
   lastModifiedDateTime: string
   webUrl: string
+  parentReference: {
+    id: string
+  }
 }
 
 export default Folder

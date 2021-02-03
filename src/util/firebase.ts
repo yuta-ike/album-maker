@@ -1,9 +1,9 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBm2x9-fOHMc6WDKFNYkc8tvVYJ7aG8fGg",
-  authDomain: "albummakerweb.firebaseapp.com",
+  authDomain: "albummakerweb.web.app",
   projectId: "albummakerweb",
   storageBucket: "albummakerweb.appspot.com",
   messagingSenderId: "496698893199",
