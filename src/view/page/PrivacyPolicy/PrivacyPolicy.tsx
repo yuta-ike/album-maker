@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Box, Button, Heading } from '@chakra-ui/react'
+import { Text, Box, Button, Heading } from '@chakra-ui/react'
 import { useHistory } from 'react-router-dom'
 
 const PrivacyPolicy = () => {
@@ -11,6 +11,7 @@ const PrivacyPolicy = () => {
   return (
     <Box p={4}>
       <Button onClick={() => history.goBack()}>戻る</Button>
+      <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
       <Heading mt={4}>プライバシーポリシー</Heading>
       <div dangerouslySetInnerHTML={{
         __html: `
@@ -22,6 +23,7 @@ const PrivacyPolicy = () => {
 以上`.split("\n").join("<br/>")
       }} />
       <Button mt={4} onClick={() => history.goBack()}>戻る</Button>
+      <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
     </Box>
   )
 }

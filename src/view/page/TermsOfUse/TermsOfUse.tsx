@@ -1,4 +1,4 @@
-import { Box, Button, Heading } from '@chakra-ui/react'
+import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
@@ -12,6 +12,7 @@ const TermsOfUse = () => {
   return (
     <Box p={4}>
       <Button onClick={() => history.goBack()}>戻る</Button>
+      <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
       <Heading mt={4}>利用規約</Heading>
       <div dangerouslySetInnerHTML={{__html: `
 この利用規約（以下，「本規約」といいます。）は，このウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。
@@ -98,6 +99,7 @@ const TermsOfUse = () => {
 
 以上`.split("\n").join("<br/>")}}/>
       <Button onClick={() => history.goBack()} mt={4}>戻る</Button>
+      <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
     </Box>
   )
 }
