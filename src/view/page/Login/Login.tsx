@@ -5,6 +5,7 @@ import { Icon, Button, Flex, Checkbox, Image, Heading, Text, Stack, VStack, Box,
 import { Link, useHistory } from 'react-router-dom'
 import LoginDialog from './component/LoginDialog'
 import { FiShare } from 'react-icons/fi'
+import Header from '../../component/organization/Header'
 
 const device: "iPhone" | "Android" | "Others" = (() => {
   if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('iPad') > 0){
@@ -44,14 +45,9 @@ const Login: React.FC = () => {
 
   return (
     <div>
-      <Flex
-        position="fixed" w="100vw" top={0} left={0} h="calc(60px + env(safe-area-inset-top))"
-        justifyContent="space-between" align="center" px={4} pb={2} pt="calc(0.5rem + env(safe-area-inset-top))"
-        bg="blue.50" boxShadow="sm" zIndex={30}
-      >
-        <Heading size="h2"><span style={{ fontSize: "130%" }}>O</span>NE<span style={{ fontSize: "130%" }}>P</span>ICK</Heading>
-        <Button onClick={handleDialogOpen} colorScheme="teal">ログイン</Button>
-      </Flex>
+      <Header
+        tailArea={<Button onClick={handleDialogOpen} colorScheme="teal">ログイン</Button>}
+      />
       <Flex pt="100px" maxW="full" w="800px" mx="auto" direction="column" align="center">
         <Heading as="h1">
           O<span style={{ fontSize: "80%" }}>NE</span>P<span style={{ fontSize: "80%" }}>ICK</span>
@@ -119,10 +115,12 @@ const Login: React.FC = () => {
         <Flex
           w="100vw" h="130px" bg="blue.50" direction="column" align="center" px={4} py={8}
         >
-          <Box textAlign="center">
-            <Link to="/terms" className="link">利用規約</Link>
-            {" "}/{" "}<Link to="/privacy" className="link">プライバシーポリシー</Link>
-            {" "}/{" "}<a href="https://forms.gle/zHryvud1EHYzt9U26" className="link">お問い合わせ</a>
+          <Box fontSize="sm" textAlign="center">
+            <Link to="/terms" className="link"><Text d="inline-block" as="span">利用規約</Text></Link>
+            {" "}/{" "}<Link to="/privacy" className="link"><Text d="inline-block" as="span">プライバシーポリシー</Text></Link>
+            {" "}/{" "}<Link to="/howto" className="link"><Text d="inline-block" as="span">使い方</Text></Link>
+            {" "}/{" "}<Link to="/release" className="link"><Text d="inline-block" as="span">リリースノート</Text></Link>
+            {" "}/{" "}<a href="https://forms.gle/zHryvud1EHYzt9U26" className="link"><Text d="inline-block" as="span">お問い合わせ</Text></a>
             {" "}/{" "}イラスト: <a href="https://loosedrawing.com/" className="link" target="_blank" rel="noreferrer">Loose Drawing</a>
           </Box>
           <Text fontSize="sm" mt={2}>©yuta-ike</Text>

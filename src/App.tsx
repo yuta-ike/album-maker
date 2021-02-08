@@ -16,6 +16,8 @@ import Print from './view/page/Print/Print'
 import PrivacyPolicy from './view/page/PrivacyPolicy/PrivacyPolicy'
 import TermsOfUse from './view/page/TermsOfUse/TermsOfUse'
 import Loading from './view/component/organization/Loading'
+import HowToUse from './view/page/HowToUse/HowToUse'
+import ReleaseNote from './view/page/ReleaseNote/ReleaseNote'
 
 const stores = createStore(fileReducers)
 
@@ -30,7 +32,7 @@ const Pages: React.FC = () => {
 
   useEffect(() => {
     const listener = (e: any) => {
-      if(window.location.pathname === "/login") return;
+      if (window.location.pathname !== "/" && window.location.pathname !== "/print") return;
       e.preventDefault()
       e.returnValue = '作業内容が失われます。本当に移動しますか？'
       return '作業内容が失われます。本当に移動しますか？'
@@ -49,32 +51,12 @@ const Pages: React.FC = () => {
               <UnAuthRoute exact path="/login" redirectUrl="/" component={Login}/>
               <PrivateRoute exact path="/" redirectUrl="/login" component={Home} />
               <PrivateRoute exact path="/print" redirectUrl="/login" component={Print} />
-              <Route exact path="/privacy" redirectUrl="/login" component={PrivacyPolicy} />
-              <Route exact path="/terms" redirectUrl="/login" component={TermsOfUse} />
+              <Route exact path="/privacy" component={PrivacyPolicy} />
+              <Route exact path="/terms" component={TermsOfUse} />
+              <Route exact path="/howto" component={HowToUse} />
+              <Route exact path="/release" component={ReleaseNote} />
               <Redirect to="/login"/>
             </Switch>
-            {/* <Route exact path="/" component={() => <Prompt
-              message={(location, action) => {
-                console.log(action)
-
-                if (location.pathname === "/" || location.pathname === "/print"){
-                  return true
-                }else{
-                  return "作業内容が失われます。移動しますか？"
-                }
-              }}
-            />} />
-            <Route exact path="/print" component={() => <Prompt
-              message={(location, action) => {
-                console.log(action)
-
-                if (location.pathname === "/" || location.pathname === "/print") {
-                  return true
-                } else {
-                  return "作業内容が失われます。移動しますか？"
-                }
-              }}
-            />} /> */}
           </Router>
         </ChakraProvider>
       </SWRConfig>

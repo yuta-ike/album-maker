@@ -1,7 +1,7 @@
 import { Client } from "@microsoft/microsoft-graph-client"
 import heic2any from "heic2any"
 import useSWR, { mutate } from "swr"
-import { MIME_TYPE_NEED_CONVERT } from "../consts/acceptableMimeTypes"
+import { MIME_TYPE_NEED_CONVERT } from "../constants/acceptableMimeTypes"
 import { useUserStateValues } from "../state/context/UserProvider"
 import DriveFile from "../type/driveFile"
 import Folder from "../type/folder"

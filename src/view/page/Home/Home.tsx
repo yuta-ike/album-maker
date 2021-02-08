@@ -13,7 +13,7 @@ import { useUserActions, useUserStateValues } from '../../../state/context/UserP
 import PIP from '../../component/atom/PIP/PIP'
 import ProfileIcon from '../../component/atom/ProfileIcon/ProfileIcon'
 import { MdChevronRight, MdHome, MdRefresh } from 'react-icons/md'
-import { MIME_TYPE_LIST } from '../../../consts/acceptableMimeTypes'
+import { MIME_TYPE_LIST } from '../../../constants/acceptableMimeTypes'
 import useScrollTopWhenMounted from '../../../hooks/useScrollTopWhenMounted'
 import SizeButton from './component/SizeButton'
 import RetryToast from '../../component/atom/Toast/RetryToast'

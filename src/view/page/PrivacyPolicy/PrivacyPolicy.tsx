@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { Text, Box, Button, Heading } from '@chakra-ui/react'
 import { useHistory } from 'react-router-dom'
+import Header from '../../component/organization/Header'
+import PRIVACY_POLICY from '../../../constants/privacyPolicy'
+import Footer from '../../component/organization/Footer'
 
 const PrivacyPolicy = () => {
   const history = useHistory()
@@ -9,22 +12,20 @@ const PrivacyPolicy = () => {
   }, [])
 
   return (
-    <Box p={4}>
-      <Button onClick={() => history.goBack()}>戻る</Button>
-      <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
-      <Heading mt={4}>プライバシーポリシー</Heading>
-      <div dangerouslySetInnerHTML={{
-        __html: `
-第三者に個人を特定できる情報を提供することはありません。
-
-免責事項
-利用上の不具合・不都合に対して可能な限りサポートを行いますが、利用者が本サービスを利用して生じた損害に関して、運営者は責任を負わないものとします。
-
-以上`.split("\n").join("<br/>")
-      }} />
-      <Button mt={4} onClick={() => history.goBack()}>戻る</Button>
-      <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
-    </Box>
+    <>
+      <Header/>
+      <Box px={4} pb={36} pt="calc(60px + 2rem)" maxW="800px" mx="auto" minH="100vh">
+        <Box bg="blue.100" borderRadius="10px" p={8} boxShadow="sm" mt={8}>
+          <Heading size="h3" mb={8} fontSize="2xl">プライバシーポリシー</Heading>
+          <div dangerouslySetInnerHTML={{
+            __html: PRIVACY_POLICY.split("\n").join("<br/>")
+          }}/>
+        </Box>
+        <Button mt={8} onClick={() => history.goBack()}>戻る</Button>
+        <Text fontSize="sm">※ うまく戻れない場合はリロードしてください</Text>
+      </Box>
+      <Footer/>
+    </>
   )
 }
 

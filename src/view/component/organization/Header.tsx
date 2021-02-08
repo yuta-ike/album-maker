@@ -1,17 +1,19 @@
-import { Flex, Button } from '@chakra-ui/react'
+import { Flex, Heading } from '@chakra-ui/react'
 import React from 'react'
 
-const Header = () => {
+type Props = {
+  tailArea?: React.ReactNode
+}
+
+const Header: React.FC<Props> = ({ tailArea }) => {
   return (
     <Flex
-      justifyContent="flex-end"
-      as="header" position="fixed" top={0} left={0} w="full" h="50px" bg="blue.300" px={4}
+      position="fixed" w="100vw" top={0} left={0} h="calc(60px + env(safe-area-inset-top))"
+      justifyContent="space-between" align="center" px={4} pb={2} pt="calc(0.5rem + env(safe-area-inset-top))"
+      bg="blue.50" boxShadow="sm" zIndex={30}
     >
-      <Flex
-        alignItems="center"
-      >
-        <Button variant="ghost" colorScheme="blue" fontWeight="normal" size="sm" color="white" _hover={{ bg: "blue.200" }}>ログアウト</Button>
-      </Flex>
+      <Heading size="h2"><span style={{ fontSize: "130%" }}>O</span>NE<span style={{ fontSize: "130%" }}>P</span>ICK</Heading>
+      { tailArea }
     </Flex>
   )
 }
